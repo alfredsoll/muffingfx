@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – MuffinGFX</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="portfolio.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/New_Project_64.png">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Muffin<span>GFX</span></div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="about.html">Om Os</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="https://discord.gg/wV4uRQPgbg" target="_blank" class="discord-link">Discord</a></li>
+        </ul>
+
+        <div class="theme-toggle" id="themeToggle">
+          <img src="img/moon-svgrepo-com.svg" alt="Mørk Tilstand" class="theme-icon moon-icon">
+          <img src="img/icons8-sun.svg" alt="Lys Tilstand" class="theme-icon sun-icon">
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </nav>
+    </div>
+  </header>
+
+
+
+<main class="page-content">
+    <div class="container">
+        <h1 class="section-title">Portfolio</h1>
+
+        <p class="section-description">
+          Her kan du udforske vores tidligere arbejde fordelt på forskellige kategorier. Vi har samlet nogle af vores bedste projekter inden for Minecraft grafik, YouTube branding og meget mere. Klik rundt og se, hvad vi kan – og bliv inspireret!
+        </p>
+
+        <br><br>
+
+
+        <!-- Hovedkategorier -->
+        <div class="main-categories">
+            <button class="main-tab active" data-main="minecraft">Minecraft</button>
+            <button class="main-tab" data-main="youtube">YouTube</button>
+            <button class="main-tab" data-main="andet">Andet</button>
+        </div>
+
+        <!-- Underkategorier -->
+        <div class="sub-categories" id="subCategories">
+            <!-- Dynamisk via JS -->
+        </div>
+
+        <!-- Portfolio grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Billeder skal indsættes her manuelt for hver kategori -->
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 MuffinGFX. Alle rettigheder forbeholdes.</p>
+      <div class="social-links">
+        <a href="#">Discord</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Om os – MuffinGFX</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/New_Project_64.png">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Muffin<span>GFX</span></div>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="about.html" class="active">Om Os</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="https://discord.gg/wV4uRQPgbg" target="_blank" class="discord-link">Discord</a></li>
+        </ul>
+
+
+
+        <div class="theme-toggle" id="themeToggle">
+          <img src="img/moon-svgrepo-com.svg" alt="Mørk Tilstand" class="theme-icon moon-icon">
+          <img src="img/icons8-sun.svg" alt="Lys Tilstand" class="theme-icon sun-icon">
+        </div>
+
+        
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-page">
+    <div class="container">
+      <div class="about-content">
+        <!-- About Text -->
+        <div class="about-text fade-in">
+          <h1>Om MuffinGFX</h1>
+          <p>Muffingfx blev grundlagt af Muffin og Ida, to grafiske entusiaster, der begge brændte for design og ønskede at skabe et professionelt grafisk team. Fra starten har vi haft fokus på at levere design, der ikke kun ser godt ud, men også hjælper vores kunder med at opbygge et stærkt visuelt brand. </p>
+          <p>Vi er et lille, dedikeret team, der kombinerer flere års erfaring indenfor grafisk design og markedsføring, og vi er passionerede omkring at skabe noget unikt og relevant.</p>
+
+          <p><strong>Vores arbejde</strong></p>
+            <p>Vi specialiserer os primært i at designe logoer og bannere til YouTube og andre sociale medier. Med over 5-6 års erfaring på området har vi udviklet en skarp forståelse for, hvad der fungerer i den visuelle verden af sociale medier. Vores design hjælper ikke kun med at skille sig ud, men også med at formidle vores kunders budskaber effektivt. </p>
+            <p>Vi arbejder tæt sammen med vores kunder for at sikre, at deres vision bliver realiseret på en måde, der er både æstetisk tiltalende og funktionel.</p>
+            
+            <p><strong>Teamet</strong></p>
+            <p>Vores team består af kreative designere, der har en stærk baggrund i både Minecraft server support og hosting support, hvilket giver os en unik forståelse for både tekniske og kreative behov. </p>
+            <p>Denne alsidighed gør, at vi kan tilpasse vores løsninger til enhver situation og hjælpe kunder fra forskellige områder med at få den grafiske støtte, de behøver.</p>
+            
+            <p><strong>Vores erfaring og samarbejde</strong></p>
+            <p>Vi har haft fornøjelsen af at arbejde med TierrG (nu Aleko), hvor vi skabte logo og banner til hans YouTube-kanal, samt samarbejdet med Softwave, hvor vi står for al grafisk design og video-redigering til deres produkter. </p>
+            <p>Vores erfaring med både private og erhvervslivet har givet os den nødvendige viden til at imødekomme et bredt udvalg af behov og krav.</p>
+            
+            <p><strong>Vores mission</strong></p>
+            <p>Hos Muffingfx handler det ikke kun om at designe grafik – det handler om at skabe værdi. Vi stræber efter at blive bedre hver dag, både som designere og som team. </p>
+            <p>Selvom vi drømmer om at bygge en karriere indenfor grafisk design, er det vigtigste for os at sikre, at vores kunder bliver glade og tilfredse med det arbejde, vi leverer. En glad kunde er det, vi værdsætter mest, og vi arbejder hårdt for at opnå det.</p>
+            
+            <p><strong>Vores værdi</strong></p>
+            <p>Vi mener, at der er meget få danske grafikhold, der kan matche vores erfaring og kreativitet. Selvom vi selvfølgelig selv mener, vi er blandt de bedste i Danmark, er det altid kundernes tilfredshed, der gør, at vi føler, vi har gjort vores job ordentligt. </p>
+            <p>Vi er stolte af at være et innovativt og passioneret team, der altid er klar til at tage nye udfordringer op – og vi er fast besluttet på at bringe den samme passion og kvalitet til hvert eneste projekt.</p>
+        </div>
+
+        <!-- Terms of Service Dropdown -->
+        <div class="tos-dropdown fade-in delay-1">
+          <h2 onclick="toggleTOS()">Vilkår for brug (ToS) <span class="arrow">&#x2193;</span></h2>
+          <div class="tos-content" id="tosContent">
+            <p><strong>Ved at købe eller bruge mine grafiske designs, accepterer du følgende vilkår:</strong></p>
+
+            <h3>Vilkårene kan blive opdateret</h3>
+            <p>Vilkårene kan blive opdateret fra tid til anden. Eventuelle opdateringer vil blive offentliggjort her.</p>
+
+            <h3>Betalingsvilkår</h3>
+            <ul>
+              <li>Fuldt betaling kræves forud for alle grafiske design.</li>
+              <li>Alle salg er endelige, og der gives ingen refusion, når produktet er leveret.</li>
+              <li>Betaling skal ske via den aftalte metode (f.eks. PayPal, bankoverførsel, Mobilepay osv.).</li>
+            </ul>
+
+            <h3>Levering</h3>
+            <ul>
+              <li>Leveringstiden for grafiske design varierer afhængigt af opgavens kompleksitet. En estimeret leveringstid vil blive givet, når din ordre er bekræftet.</li>
+              <li>Alle filer vil blive sendt i høj kvalitetsformater som PNG, JPEG eller andre aftalte formater.</li>
+            </ul>
+
+            <h3>Revisioner</h3>
+            <ul>
+              <li>Jeg tilbyder op til 2 revisioner. Eventuelle ekstra revisioner vil medføre ekstra gebyrer.</li>
+              <li>Revisioner skal anmodes om inden for 3 timer efter modtagelse af det endelige design.</li>
+            </ul>
+
+            <h3>Brugsretter</h3>
+            <ul>
+              <li>De designs, du køber, er til personlig eller kommerciel brug, afhængigt af de vilkår, der er aftalt ved købet.</li>
+              <li>Videreforhandling eller redistribution af designet er strengt forbudt.</li>
+            </ul>
+
+            <h3>Ophavsretter</h3>
+            <ul>
+              <li>Alle grafiske designs, som jeg skaber, forbliver min intellektuelle ejendom, indtil betalingen er fuldt ud gennemført.</li>
+              <li>Du må ikke bruge eller distribuere designet uden at have købt det.</li>
+              <li>Du må ikke påstå, at designet er dit eget arbejde, selv efter købet.</li>
+            </ul>
+
+            <p>Hvis du overtræder disse regler, forbeholder jeg mig retten til at tage juridiske skridt.</p>
+
+            <p>Hvis du har spørgsmål om disse vilkår, er du velkommen til at kontakte mig. Ved at købe accepterer du disse vilkår.</p>
+
+            <p><em>(Sidst opdateret 22-01-2025)</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 MuffinGFX. Alle rettigheder forbeholdes.</p>
+      <div class="social-links">
+        <a href="https://discord.gg/YOUR_LINK" target="_blank">Discord</a>
+        <a href="https://twitter.com/YOUR_PROFILE" target="_blank">Twitter</a>
+        <a href="https://instagram.com/YOUR_PROFILE" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTOS() {
+      const tosContent = document.getElementById('tosContent');
+      tosContent.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
