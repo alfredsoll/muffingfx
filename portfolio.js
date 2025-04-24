@@ -33,7 +33,7 @@ mainTabs.forEach(tab => {
     tab.classList.add('active');
     const selected = tab.dataset.main;
     renderSubTabs(selected);
-    renderGrid(selected, Object.keys(data[selected])[0]); // default first subcategory
+    renderGrid(selected, Object.keys(data[selected])[0]); 
   });
 });
 
@@ -53,30 +53,27 @@ function renderSubTabs(mainCategory) {
 }
 
 function renderGrid(main, sub) {
-    grid.innerHTML = ""; // Clear existing content
+    grid.innerHTML = "";
   
-    // Get the images for the selected category and subcategory
     const images = data[main][sub];
   
     images.forEach(image => {
       const card = document.createElement("div");
       card.className = "portfolio-card";
   
-      // Add specific classes for banners and thumbnails to make the box larger
       if (sub === "Bannere") {
         card.classList.add("banner");
       } else if (sub === "Thumbnails") {
         card.classList.add("thumbnail");
       }
   
-      // Build the correct image path
       const imagePath = main === "andet" 
-        ? `img/andet/${image}`  // Special path for 'andet' category
-        : `img/${main.toLowerCase()}/${sub.toLowerCase()}/${image}`;  // Standard path for other categories
+        ? `img/andet/${image}` 
+        : `img/${main.toLowerCase()}/${sub.toLowerCase()}/${image}`; 
   
       const img = document.createElement("img");
-      img.src = imagePath; // Set the image source
-      img.alt = `${sub} - ${image}`; // Alt text for accessibility
+      img.src = imagePath; 
+      img.alt = `${sub} - ${image}`;
       img.classList.add("portfolio-img");
   
       // Append image to card
@@ -98,25 +95,22 @@ const lightIcon = document.querySelector(".sun-icon");
 const darkIcon = document.querySelector(".moon-icon");
 const body = document.body;
 
-// Hent brugerens sidste valg fra localStorage
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light");
-  lightIcon.style.display = "none";  // Skjul lys ikon
-  darkIcon.style.display = "block";  // Vis mørk ikon
+  lightIcon.style.display = "none"; 
+  darkIcon.style.display = "block"; 
 } else {
   body.classList.add("dark");
-  lightIcon.style.display = "block";  // Vis lys ikon
-  darkIcon.style.display = "none";  // Skjul mørk ikon
+  lightIcon.style.display = "block";
+  darkIcon.style.display = "none"; 
 }
 
-// Toggle knap
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("light");
   body.classList.toggle("dark");
 
   const isLight = body.classList.contains("light");
 
-  // Vis og skjul ikoner afhængig af tilstand
   if (isLight) {
     lightIcon.style.display = "none";
     darkIcon.style.display = "block";
@@ -125,6 +119,6 @@ toggleBtn.addEventListener("click", () => {
     darkIcon.style.display = "none";
   }
 
-  // Gem brugerens valg i localStorage
+
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
