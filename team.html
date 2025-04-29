@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="icon" type="image/png" href="img/New_Project_64.png">
 </head>
 <body>
@@ -15,18 +15,27 @@
       <div class="logo">Muffin<span>GFX</span></div>
       <nav>
         <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Hjem</a></li>
-          <li><a href="about.html">Om Os</a></li>
-          <li><a href="team.html" class="active">Team</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="https://discord.gg/wV4uRQPgbg" target="_blank" class="discord-link">Discord</a></li>
+          <li><a href="index.html" class="lang-home">Hjem</a></li>
+          <li><a href="about.html" class="lang-about">Om Os</a></li>
+          <li><a href="team.html" class="lang-team">Team</a></li>
+          <li><a href="portfolio.html" class="lang-portfolio">Portfolio</a></li>
+          <li><a href="https://discord.gg/wV4uRQPgbg" target="_blank" class="discord-link lang-discord">Discord</a></li>
         </ul>
+  
+       
+  
+        <div class="language-toggle" id="languageToggle">
+          <img src="img/united-kingdom-flag-icon.svg" alt="Dansk" class="language-icon danish-icon">
+          <img src="img/denmark-flag-icon.svg" alt="English" class="language-icon english-icon">
+        </div>
 
         <div class="theme-toggle" id="themeToggle">
           <img src="img/moon-svgrepo-com.svg" alt="Mørk Tilstand" class="theme-icon moon-icon">
           <img src="img/icons8-sun.svg" alt="Lys Tilstand" class="theme-icon sun-icon">
         </div>
 
+
+        
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       </nav>
     </div>
@@ -34,56 +43,52 @@
 
   <section class="page-content">
     <div class="container">
-      <h1>Mød Teamet</h1>
-      <p class="team-description">
+      <h1 class="lang-meetteam">Mød Teamet</h1>
+      <p class="team-description lang-teamdescription">
         Vi er et kreativt team af designere, marketingfolk og moderatorer, der arbejder sammen for at levere fantastiske grafiske løsninger og en positiv oplevelse på vores platforme. Vi tror på samarbejde, innovation og en passion for kvalitet i alt, hvad vi gør.
       </p>
 
-      <div class="team-grid">
+      <div class="team-grid ">
         <!-- DetMuffin -->
         <a class="team-card" href="https://discord.com/users/882307460323491851" target="_blank">
           <img class="avatar" src="https://cdn.discordapp.com/avatars/882307460323491851/bc8f141fe22b7ba99abfba78af711660.png?size=1024" alt="DetMuffin">
           <h3>DetMuffin</h3>
           <p class="discord-username">@det_muffin</p>
-          <span class="role-badge">Designer</span>
-          <p class="feedback">"Jeg elsker at hjælpe kunderne og lave fede designs – især mine Minecraft-logoer, dem er jeg ret stolt af. Der er altid plads til at forbedre kvaliteten"</p>
+          <span class="role-badge langroledesigner">Designer</span>
+          <p class="feedback lang-feedbackmuffin">"Jeg elsker at hjælpe kunderne og lave fede designs – især mine Minecraft-logoer, dem er jeg ret stolt af. Der er altid plads til at forbedre kvaliteten"</p>
           <br>
-          <p>mail: mrmuffin085@gmail.com
-          </p>
-              
-              <!-- Du kan tilføje flere ikoner her -->
-      
+          <p class="langmail scroll-reveal">mail: mrmuffin085@gmail.com</p>
+        </a>
 
         <!-- Alfred Soll -->
         <a class="team-card" href="https://discord.com/users/1000572209238114454" target="_blank">
           <img class="avatar" src="https://cdn.discordapp.com/avatars/1000572209238114454/56e201b342fcc420fe5d8d350905d7d0.png?size=1024" alt="Alfred Soll">
           <h3>Alfred Soll</h3>
           <p class="discord-username">@alfred_soll</p>
-          <span class="role-badge">Marketing Manager</span>
-          <p class="feedback">"Jeg elsker friheden og det søde team. Jeg har bl.a. skaffet kunder og stået for samarbejdet med Softwave. Vi kunne dog blive bedre til at promovere os selv."</p>
+          <span class="role-badge langrolemarketing">Marketing Manager</span>
+          <p class="feedback lang-feedbackalfred">"Jeg elsker friheden og det søde team. Jeg har bl.a. skaffet kunder og stået for samarbejdet med Softwave. Vi kunne dog blive bedre til at promovere os selv."</p>
           <br>
-          <p>mail:alfredsoll10@gmail.com</p>
+          <p class="langmail scroll-reveal">mail: alfredsoll10@gmail.com</p>
         </a>
-        
 
         <!-- Ida -->
         <a class="team-card" href="https://discord.com/users/1158775014179491840" target="_blank">
           <img class="avatar" src="https://cdn.discordapp.com/avatars/1158775014179491840/adfc737ea4ce2e8a670c30427904d3eb.png?size=1024" alt="Ida">
           <h3>Ida</h3>
           <p class="discord-username">@idaazz</p>
-          <span class="role-badge">Digital Artist</span>
-          <p class="feedback">"Jeg elsker at tegne og nyder at kunne gøre andre glade med det. Jeg er især stolt af de Minecraft-logoer, jeg har lavet – men jeg arbejder hele tiden på at få endnu flere detaljer med" </p>
+          <span class="role-badge langroleartist">Digital Artist</span>
+          <p class="feedback lang-feedbackida">"Jeg elsker at tegne og nyder at kunne gøre andre glade med det. Jeg er især stolt af de Minecraft-logoer, jeg har lavet – men jeg arbejder hele tiden på at få endnu flere detaljer med."</p>
           <br>
-          <p>mail: idapedersen@outlook.com</p>
+          <p class="langmail scroll-reveal">mail: idapedersen@outlook.com</p>
         </a>
 
         <!-- Foxi -->
-        <a class="team-card" href="https://discord.com/users/697068276227768390" target="_blank">
-          <img class="avatar" src="https://cdn.discordapp.com/avatars/697068276227768390/a_0262011a12d42496683dec1329a2cba3.gif?size=1024" alt="Foxi">
-          <h3>Foxi</h3>
-          <p class="discord-username">@foxi6568</p>
-          <span class="role-badge">Moderator</span>
-          <p class="feedback">"“Jeg elsker fællesskabet i teamet – vi har et virkelig godt sammenhold. Jeg har hjulpet med at promovere os og holde styr på forskellige ting bag kulisserne. Jeg tager det som det kommer og prøver bare at være der, hvor der er brug for mig."</p>
+        <a class="team-card scroll-reveal" href="https://discord.com/users/697068276227768390" target="_blank">
+          <img class="avatar scroll-reveal" src="https://cdn.discordapp.com/avatars/697068276227768390/a_0262011a12d42496683dec1329a2cba3.gif?size=1024" alt="Foxi">
+          <h3 class="scroll-reveal">Foxi</h3>
+          <p class="discord-username scroll-reveal">@foxi6568</p>
+          <span class="role-badge langrolemoderator scroll-reveal">Moderator</span>
+          <p class="feedback lang-feedbackfoxi scroll-reveal">"Jeg elsker fællesskabet i teamet – vi har et virkelig godt sammenhold. Jeg har hjulpet med at promovere os og holde styr på forskellige ting bag kulisserne. Jeg tager det som det kommer og prøver bare at være der, hvor der er brug for mig."</p>
         </a>
       </div>
     </div>
@@ -91,16 +96,14 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 MuffinGFX. Alle rettigheder forbeholdes.</p>
+      <p class="lang-footer-text">&copy; 2025 MuffinGFX. Alle rettigheder forbeholdes.</p>
       <div class="social-links">
-        <a href="https://discord.gg/wV4uRQPgbg" target="_blank">Discord</a>
-        <a href="#" target="_blank">Twitter</a>
-        <a href="#" target="_blank">Instagram</a>
+        <a href="https://discord.gg/wV4uRQPgbg" target="_blank" class="lang-discord">Discord</a>
+        <a href="#" target="_blank" class="lang-twitter">Twitter</a>
+        <a href="#" target="_blank" class="lang-instagram">Instagram</a>
       </div>
     </div>
   </footer>
-
-
 
 </body>
 </html>
