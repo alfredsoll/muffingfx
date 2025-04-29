@@ -122,3 +122,84 @@ toggleBtn.addEventListener("click", () => {
 
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
+
+
+
+//translate
+
+
+function setHTML(selector, html) {
+  const elements = document.querySelectorAll(selector);
+  elements.forEach(el => el.innerHTML = html);
+}
+
+const translations = {
+  enlish: {
+    home: "Home",
+    about: "About",
+    team: "Team",
+    portfolio: "Portfolio",
+    discord: "Discord",
+    portfoliodes: "Here you can explore our previous work across different categories. We've gathered some of our best projects in Minecraft graphics, YouTube branding, and more. Click around and get inspired!",
+    minecraft: "Minecraft",
+    youtube: "YouTube",
+    other: "Other",
+    partner:"Our Partners",
+    softdec:"Online Webstore - We deliver Graphic and Support",
+    nextpartner: "Do you want to be our next partner?",
+    nextpartnercontact: "Contact us today!",
+
+    copyright: "© 2025 MuffinGFX. All rights reserved.",
+    discordFooter: "Discord",
+    
+    twitter: "Twitter",
+    instagram: "Instagram"
+  },
+  danish: {
+    home: "Hjem",
+    about: "About",
+    team: "Team",
+    portfolio: "Portfolio",
+    discord: "Discord",
+    portfoliodes: "Her kan du udforske vores tidligere arbejde fordelt på forskellige kategorier. Vi har samlet nogle af vores bedste projekter inden for Minecraft grafik, YouTube branding og meget mere. Klik rundt og se, hvad vi kan – og bliv inspireret!",
+    minecraft: "Minecraft",
+    youtube: "YouTube",
+    other: "Andet",
+    partner: "Vores partnere",
+    softdec: "Online webstore – Vi leverer grafik og support",
+    nextpartner: "Skal du være vores næste partner?",
+    nextpartnercontact: "Kontakt os i dag!",
+  }
+};
+
+const danishFlag = document.querySelector(".danish-icon");
+const englishFlag = document.querySelector(".english-icon");
+
+let currentLanguage = localStorage.getItem("language") || "danish";
+
+function changeLanguage(language) {
+  setHTML(".lang-portfoliodes", translations[language].portfoliodes);
+  setHTML(".lang-about", translations[language].about);
+  setHTML(".lang-team", translations[language].team);
+  setHTML(".lang-portfolio", translations[language].portfolio);
+  setHTML(".lang-portfoliode", translations[language].portfoliode);
+  setHTML(".lang-discord", translations[language].discord);
+  setHTML(".lang-twitter", translations[language].twitter);
+  setHTML(".lang-instagram", translations[language].instagram);
+  setHTML(".lang-footer-text", translations[language].footerText);
+
+  // Flags
+  danishFlag.style.display = language === "danish" ? "block" : "none";
+  englishFlag.style.display = language === "english" ? "block" : "none";
+
+  localStorage.setItem("language", language);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  changeLanguage(currentLanguage);
+
+  document.getElementById("languageToggle").addEventListener("click", () => {
+    currentLanguage = currentLanguage === "danish" ? "english" : "danish";
+    changeLanguage(currentLanguage);
+  });
+});
