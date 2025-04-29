@@ -23,6 +23,37 @@
     min-height: 100vh;  /* Gør at body fylder hele højden af skærmen */
 }
   
+
+
+/* Grundanimation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Klargør klassen til brug */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
   .container {
     max-width: 1200px;
     margin: auto;
@@ -55,6 +86,7 @@
     list-style: none;
     display: flex;
     gap: 2rem;
+    min-width: 450px
   }
   
   .nav-links a {
@@ -99,6 +131,8 @@
     align-items: center;
     background: linear-gradient(145deg, var(--surface) 0%, var(--bg) 100%);
   }
+  
+
   
   
   .hero h1 {
@@ -175,6 +209,162 @@
     margin-bottom: 2rem;
   }
   
+.partners-section {
+  padding: 60px 0;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.partners-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 20px;
+}
+
+.partner-card {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-card img {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+.partner-card p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.partner-card span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.partner-card.empty {
+  background: #eeeeee;
+  border: 2px dashed #bbb;
+  color: #555;
+}
+
+.partner-card.empty:hover {
+  background: #e0e0e0;
+  cursor: pointer;
+}
+
+
+
+.partners-section {
+  padding: 60px 0;
+  background-color: var(--bg);
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.partners-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 20px;
+}
+
+.partner-card {
+  min-width: 250px;
+  flex: 0 0 auto;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  padding: 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card img {
+  max-width: 120px;
+  margin-bottom: 15px;
+  filter: brightness(1); /* så billeder passer bedre til mørkt tema */
+}
+
+.partner-card p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.partner-card span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.partner-card.empty {
+  background: transparent;
+  border: 2px dashed var(--border);
+  color: var(--muted);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.partner-card.empty:hover {
+  background: var(--surface);
+  cursor: pointer;
+  transform: scaleX(1);
+}
+
+
+.softwave-card {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.4); /* fallback hvis billedet ikke loader */
+  backdrop-filter: blur(6px);
+  
+}
+
+.softwave-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('img/softwavelogo.png') no-repeat center 20%;
+  background-size: cover;
+  filter: brightness(0.3) blur(5px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
   .portfolio-grid {
     display: grid;
     gap: 2rem;
@@ -301,18 +491,26 @@
   }
   
   .tos-dropdown .arrow {
+    display: inline-block;
+    font-size: 1.5rem; /* Gør pilen tydeligere */
+    margin-left: 0.5rem; /* Giver luft mellem tekst og pil */
     transition: transform 0.3s ease;
+    font-family: Arial, sans-serif;
   }
+  
   
   .tos-dropdown .arrow.rotate {
     transform: rotate(180deg); /* Roter pilen 180 grader */
   }
+
+  
   
   .tos-content {
     display: none;
     color: var(--text);
     margin-top: 1.5rem;
     padding-left: 1rem;
+    transition: all 0.3s ease;
   }
   
   .tos-content.active {
@@ -558,6 +756,8 @@
     gap: 1rem;
     align-items: center;
     cursor: pointer;
+    margin-top: -30px;
+    margin-left: -590px;
   }
   
   .theme-icon {
@@ -589,3 +789,22 @@
   body.light .logo {
     color: black;
   }
+
+
+
+
+
+  .language-toggle {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -30px;
+  }
+  
+  .language-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  
