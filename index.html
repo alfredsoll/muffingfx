@@ -92,6 +92,35 @@
     </div>
   </section>
 
+<!-- Kontakt-knap -->
+<button class="open-contact-btn">Kontakt os</button>
+
+<!-- Modal med kontakt + ekstra valgmuligheder -->
+<div class="contact-modal" id="contactModal">
+  <div class="contact-modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Kontakt Os</h2>
+
+    <!-- Udvidet valg-menu -->
+    <div class="contact-options">
+      <button data-type="support">Support</button>
+      <button data-type="bestilling">Bestilling</button>
+      <button data-type="feedback">Feedback</button>
+      <button data-type="andet">Andet</button>
+    </div>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Dit navn" required>
+      <textarea id="message" placeholder="Din besked" required></textarea>
+      <input type="hidden" id="contactType" value="Support">
+      <button type="submit">Send</button>
+    </form>
+    <p id="formStatus"></p>
+  </div>
+</div>
+
+
+  
   <footer class="footer">
     <div class="container">
       <p class="lang-footer-text">&copy; 2025 MuffinGFX. Alle rettigheder forbeholdes.</p>
