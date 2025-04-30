@@ -484,3 +484,80 @@ document.addEventListener("DOMContentLoaded", () => {
     changeLanguage(currentLanguage);
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("contactModal");
+  const openBtn = document.querySelector(".open-contact-btn");
+  const closeBtn = document.querySelector(".close-modal");
+  const typeButtons = document.querySelectorAll(".contact-options button");
+  const contactTypeInput = document.getElementById("contactType");
+  const form = document.getElementById("contactForm");
+  const statusMsg = document.getElementById("formStatus");
+
+  const webhookURL = "https://discord.com/api/webhooks/1367022540924522496/3k_dMMvglVxZPIiqgdv2Wzz-33mEFBYPFEI0TdYe0nzlNtPfZT1BhnL_6SwgUsHEbf8I"; // ← Indsæt din Webhook URL her
+
+  // Åbn/luk modal
+  openBtn.onclick = () => modal.classList.add("visible");
+  closeBtn.onclick = () => modal.classList.remove("visible");
+  window.onclick = e => {
+    if (e.target === modal) modal.classList.remove("visible");
+  };
+
+  // Skift kontakt-type når der klikkes på en knap
+  typeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const type = btn.dataset.type;
+      contactTypeInput.value = type;
+      typeButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+
+  // Formular submit
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const type = contactTypeInput.value;
+
+    const payload = {
+      embeds: [{
+        title: "📩 Ny Kontaktformular Besked",
+        color: 0x5865F2,
+        fields: [
+          { name: "👤 Navn", value: name || "Ikke angivet", inline: true },
+          { name: "📂 Type", value: type || "Ikke valgt", inline: true },
+          { name: "✉️ Besked", value: message || "Ingen besked", inline: false }
+        ],
+        footer: { text: "MuffinGFX – Kontaktformular" },
+        timestamp: new Date().toISOString()
+      }]
+    };
+
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (res.ok) {
+        statusMsg.textContent = "✅ Besked sendt!";
+        form.reset();
+        typeButtons.forEach(b => b.classList.remove("active"));
+        contactTypeInput.value = "Support";
+        setTimeout(() => {
+          modal.classList.remove("visible");
+          statusMsg.textContent = "";
+        }, 1500);
+      } else {
+        statusMsg.textContent = "❌ Fejl ved afsendelse.";
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      statusMsg.textContent = "⚠️ Noget gik galt. Prøv igen.";
+    });
+  });
+});
