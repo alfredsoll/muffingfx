@@ -137,7 +137,7 @@ function changeLanguage(language) {
   //Partner
   setHTML(".lang-ourpartner", translations[language].ourpartner);
   setHTML(".lang-partnercard", translations[language].partnercard);
-  setHTML(".lang-partnercard2", translations[language].partnercard2);
+  setHTML(".lang-partnercardcontact", translations[language].partnercardcontact);
 
 
 
@@ -245,7 +245,7 @@ const translations = {
     //ourpartner
     ourpartner: "Vores Partnere",
     partnercard: "Skal du være vores næste partner?",
-    partnercard2: "Kontakt os i dag!",
+    partnercardcontact: "Kontakt os i dag!",
 
 
     //contact
@@ -343,7 +343,7 @@ const translations = {
     //our partners
     ourpartner: "Our Partners",
     partnercard: "Do you wanna be our next partner?",
-    partnercard2: "Contact us today!",
+    partnercardcontact: "Contact us today!",
 
 
 
@@ -431,7 +431,7 @@ const langPortfolioDe = document.querySelectorAll(".lang-portfoliode")
 //partner
 const langOurPartner = document.querySelectorAll(".lang-ourpartner")
 const langPartnerCard = document.querySelectorAll(".lang-partnercard")
-const langPartnerCard2 = document.querySelectorAll(".lang-partnercard2")
+const langPartnerCardContact = document.querySelectorAll(".lang-partnercardcontact")
 
 //contact
 
@@ -521,7 +521,7 @@ function changeLanguage(language) {
   //partner
   langOurPartner.forEach(el => el.textContent = translations[language].ourpartner);
   langPartnerCard.forEach(el => el.textContent = translations[language].partnercard);
-  langPartnerCard2.forEach(el => el.textContent = translations[language].partnercard2);
+  langPartnerCardContact.forEach(el => el.textContent = translations[language].partnercardcontact);
 
 
   //contact
