@@ -552,6 +552,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+//Contact formularen
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("contactModal");
   const openBtn = document.querySelector(".open-contact-btn");
@@ -561,7 +566,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const statusMsg = document.getElementById("formStatus");
 
-  const webhookURL = "https://discord.com/api/webhooks/1367022540924522496/3k_dMMvglVxZPIiqgdv2Wzz-33mEFBYPFEI0TdYe0nzlNtPfZT1BhnL_6SwgUsHEbf8I"; // ← Indsæt din Webhook URL her
+  const webhookURL = "https://discord.com/api/webhooks/1367022540924522496/3k_dMMvglVxZPIiqgdv2Wzz-33mEFBYPFEI0TdYe0nzlNtPfZT1BhnL_6SwgUsHEbf8I";
+  let isCooldown = false;
 
   // Åbn/luk modal
   openBtn.onclick = () => modal.classList.add("visible");
@@ -570,7 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) modal.classList.remove("visible");
   };
 
-  // Skift kontakt-type når der klikkes på en knap
+  // Skift kontakt-type
   typeButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const type = btn.dataset.type;
@@ -580,11 +586,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Formular submit
+  // Formular-submit
   form.addEventListener("submit", e => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value.trim();
+    if (isCooldown) {
+      statusMsg.textContent = "⏳ Vent venligst før du sender igen.";
+      return;
+    }
+
+    const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
     const type = contactTypeInput.value;
 
@@ -593,7 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "📩 Ny Kontaktformular Besked",
         color: 0x5865F2,
         fields: [
-          { name: "👤 Navn", value: name || "Ikke angivet", inline: true },
+          { name: "📧 E-mail", value: email || "Ikke angivet", inline: true },
           { name: "📂 Type", value: type || "Ikke valgt", inline: true },
           { name: "✉️ Besked", value: message || "Ingen besked", inline: false }
         ],
@@ -613,6 +624,19 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
         typeButtons.forEach(b => b.classList.remove("active"));
         contactTypeInput.value = "Support";
+
+        // Start cooldown
+        isCooldown = true;
+        const submitBtn = form.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Vent 30 sek...";
+
+        setTimeout(() => {
+          isCooldown = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send";
+        }, 30000);
+
         setTimeout(() => {
           modal.classList.remove("visible");
           statusMsg.textContent = "";
