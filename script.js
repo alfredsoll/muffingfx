@@ -236,7 +236,7 @@ const translations = {
 
     //contact
     contactbtn: "Kontakt Os",
-    contactorderlang: "Bestil",
+    contactorderlang: "Bestilling",
 
 
 
