@@ -138,6 +138,7 @@ function changeLanguage(language) {
   setHTML(".lang-ourpartner", translations[language].ourpartner);
   setHTML(".lang-partnercard", translations[language].partnercard);
   setHTML(".lang-partnercardcontact", translations[language].partnercardcontact);
+  setHTML(".lang-softwavepartner", translations[language].softwavepartner);
 
 
 
@@ -246,6 +247,7 @@ const translations = {
     ourpartner: "Vores Partnere",
     partnercard: "Skal du være vores næste partner?",
     partnercardcontact: "Kontakt os i dag!",
+    softwavepartner: "Online webstore – Vi leverer grafik og support",
 
 
     //contact
@@ -344,6 +346,7 @@ const translations = {
     ourpartner: "Our Partners",
     partnercard: "Do you wanna be our next partner?",
     partnercardcontact: "Contact us today!",
+    softwavepartner: "Online webstore – We provide graphics and support",
 
 
 
@@ -432,6 +435,7 @@ const langPortfolioDe = document.querySelectorAll(".lang-portfoliode")
 const langOurPartner = document.querySelectorAll(".lang-ourpartner")
 const langPartnerCard = document.querySelectorAll(".lang-partnercard")
 const langPartnerCardContact = document.querySelectorAll(".lang-partnercardcontact")
+const langSoftwavePartner = document.querySelectorAll(".lang-softwavepartner")
 
 //contact
 
@@ -522,6 +526,7 @@ function changeLanguage(language) {
   langOurPartner.forEach(el => el.textContent = translations[language].ourpartner);
   langPartnerCard.forEach(el => el.textContent = translations[language].partnercard);
   langPartnerCardContact.forEach(el => el.textContent = translations[language].partnercardcontact);
+  langSoftwavePartner.forEach(el => el.textContent = translations[language].softwavepartner);
 
 
   //contact
