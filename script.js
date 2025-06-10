@@ -134,6 +134,10 @@ function changeLanguage(language) {
 
   setHTML(".portfoliode", translations[language].portfoliode)
 
+  //kontakt
+
+  setHTML(".lang-contactbtn", translations[language].contactbtn)
+
   // Skift flag og sprog i lokal opbevaring
   danishFlag.style.display = language === "danish" ? "block" : "none";
   englishFlag.style.display = language === "english" ? "block" : "none";
@@ -229,6 +233,10 @@ const translations = {
     youtube: "YouTube",
     other: "Andet",
 
+    //contact
+    contactbtn: "Kontakt",
+
+
 
   },
   english: {
@@ -315,6 +323,11 @@ const translations = {
     minecraft: "Minecraft",
     youtube: "YouTube",
     other: "Other",
+
+
+    //contact
+    contactbtn: "Contact",
+
   }
 };
 
@@ -392,6 +405,10 @@ const langFeedbackFoxi = document.querySelectorAll(".lang-feedbackfoxi")
 
 const langPortfolioDe = document.querySelectorAll(".lang-portfoliode")
 
+//contact
+
+const langContactBtn = document.querySelectorAll(".lang-contactbtn")
+
 const danishFlag = document.querySelector(".danish-icon");
 const englishFlag = document.querySelector(".english-icon");
 
@@ -468,6 +485,11 @@ function changeLanguage(language) {
   langFeedbackFoxi.forEach(el => el.textContent = translations[language].feedbackfoxi);
 
   langPortfolioDe.forEach(el => el.textContent = translations[language].portfoliode);
+
+  //contact
+
+  langContactBtn.forEach(el => el.textContent = translations[language].contactbtn)
+
 
   danishFlag.style.display = language === "danish" ? "block" : "none";
   englishFlag.style.display = language === "english" ? "block" : "none";
