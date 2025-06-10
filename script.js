@@ -132,12 +132,17 @@ function changeLanguage(language) {
 
   //portfolio
 
-  setHTML(".portfoliode", translations[language].portfoliode)
+  setHTML(".portfoliode", translations[language].portfoliode);
+
+  //Partner
+  setHTML(".lang-ourpartner", translations[language].ourpartner);
+
+
 
   //kontakt
 
-  setHTML(".lang-contactbtn", translations[language].contactbtn)
-  setHTML(".lang-contactorderlang", translations[language].contactorderlang)
+  setHTML(".lang-contactbtn", translations[language].contactbtn);
+  setHTML(".lang-contactorderlang", translations[language].contactorderlang);
 
   // Skift flag og sprog i lokal opbevaring
   danishFlag.style.display = language === "danish" ? "block" : "none";
@@ -234,6 +239,11 @@ const translations = {
     youtube: "YouTube",
     other: "Andet",
 
+
+    //ourpartner
+    ourpartner: "Vores Partnere",
+
+
     //contact
     contactbtn: "Kontakt Os",
     contactorderlang: "Bestilling",
@@ -326,6 +336,10 @@ const translations = {
     youtube: "YouTube",
     other: "Other",
 
+    //our partners
+    ourpartner: "Our Partners",
+
+
 
     //contact
     contactbtn: "Contact Us",
@@ -407,6 +421,10 @@ const langFeedbackFoxi = document.querySelectorAll(".lang-feedbackfoxi")
 //portflio
 
 const langPortfolioDe = document.querySelectorAll(".lang-portfoliode")
+
+//partner
+const langOurPartner = document.querySelectorAll(".lang-ourpartner")
+
 
 //contact
 
@@ -492,6 +510,10 @@ function changeLanguage(language) {
   langFeedbackFoxi.forEach(el => el.textContent = translations[language].feedbackfoxi);
 
   langPortfolioDe.forEach(el => el.textContent = translations[language].portfoliode);
+
+  //partner
+  langOurPartner.forEach(el => el.textContent = translations[language].ourpartner);
+
 
   //contact
 
