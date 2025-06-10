@@ -234,7 +234,7 @@ const translations = {
     other: "Andet",
 
     //contact
-    contactbtn: "Kontakt",
+    contactbtn: "Kontakt Os",
 
 
 
@@ -326,7 +326,7 @@ const translations = {
 
 
     //contact
-    contactbtn: "Contact",
+    contactbtn: "Contact Us",
 
   }
 };
