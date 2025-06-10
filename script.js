@@ -137,6 +137,7 @@ function changeLanguage(language) {
   //kontakt
 
   setHTML(".lang-contactbtn", translations[language].contactbtn)
+  setHTML(".lang-contactorderlang", translations[language].contactorderlang)
 
   // Skift flag og sprog i lokal opbevaring
   danishFlag.style.display = language === "danish" ? "block" : "none";
@@ -235,6 +236,7 @@ const translations = {
 
     //contact
     contactbtn: "Kontakt Os",
+    contactorderlang: "Bestil",
 
 
 
@@ -327,6 +329,7 @@ const translations = {
 
     //contact
     contactbtn: "Contact Us",
+    contactorderlang: "Order",
 
   }
 };
@@ -408,6 +411,10 @@ const langPortfolioDe = document.querySelectorAll(".lang-portfoliode")
 //contact
 
 const langContactBtn = document.querySelectorAll(".lang-contactbtn")
+const langContactorder = document.querySelectorAll(".lang-contactorderlang")
+
+
+
 
 const danishFlag = document.querySelector(".danish-icon");
 const englishFlag = document.querySelector(".english-icon");
@@ -489,6 +496,7 @@ function changeLanguage(language) {
   //contact
 
   langContactBtn.forEach(el => el.textContent = translations[language].contactbtn)
+  langContactorder.forEach(el => el.textContent = translations[language].contactorder)
 
 
   danishFlag.style.display = language === "danish" ? "block" : "none";
