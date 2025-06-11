@@ -365,6 +365,28 @@
   opacity: 0.9;
 }
 
+
+.dutzhost-card {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.4); /* fallback hvis billedet ikke loader */
+  backdrop-filter: blur(6px);
+}
+
+.dutzhost-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('img/dutzhost.png') no-repeat center 20%;
+  background-size: cover;
+  filter: brightness(0.3) blur(5px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+
   .portfolio-grid {
     display: grid;
     gap: 2rem;
