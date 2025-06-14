@@ -11,7 +11,7 @@ const grid = document.getElementById('portfolioGrid');
 
 const data = {
     minecraft: {
-      "Logoer": ["logo1.png", "logo2.png", "logo3.png", "nebdyrlogo2.png", "image_42.png", "logo6.png", "logo7.png"],
+      "Logoer": ["novidklogogg.png", "logo2.png", "logo3.png", "nebdyrlogo2.png", "image_42.png", "logo6.png", "logo7.png"],
       "Bannere": ["nebdyrbanner2.png", "New_Project_77.png", "mufingfx.png", "TierrG_Banner.png"],
       "Thumbnails": ["thumb1.png", "thumb2.png", "thumb3.png", "thumb4.png", "thumb5.png", "thumb6.png"]
     },
